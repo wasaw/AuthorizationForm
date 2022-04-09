@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79D5C286EE4FD6285945EB95 /* Pods_AuthorizationForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */; };
 		BB75320427FDCE2900E520E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320327FDCE2900E520E5 /* AppDelegate.swift */; };
 		BB75320627FDCE2900E520E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320527FDCE2900E520E5 /* SceneDelegate.swift */; };
 		BB75320827FDCE2900E520E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320727FDCE2900E520E5 /* ViewController.swift */; };
@@ -19,9 +20,12 @@
 		BB75322B27FEC75B00E520E5 /* SFPRODISPLAYMEDIUM.OTF in Resources */ = {isa = PBXBuildFile; fileRef = BB75322927FE0F0F00E520E5 /* SFPRODISPLAYMEDIUM.OTF */; };
 		BB75322D27FEE53200E520E5 /* WebKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75322C27FEE53200E520E5 /* WebKitController.swift */; };
 		BB753234280038DE00E520E5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB753233280038DE00E520E5 /* Extensions.swift */; };
+		BB7532372800541B00E520E5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7532362800541B00E520E5 /* NetworkService.swift */; };
+		BB75323A28016C5100E520E5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75323928016C5100E520E5 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4BCD254F56121CBD40E49A /* Pods-AuthorizationForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationForm.release.xcconfig"; path = "Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm.release.xcconfig"; sourceTree = "<group>"; };
 		BB75320027FDCE2900E520E5 /* AuthorizationForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthorizationForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB75320327FDCE2900E520E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB75320527FDCE2900E520E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		BB75322927FE0F0F00E520E5 /* SFPRODISPLAYMEDIUM.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYMEDIUM.OTF; sourceTree = "<group>"; };
 		BB75322C27FEE53200E520E5 /* WebKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitController.swift; sourceTree = "<group>"; };
 		BB753233280038DE00E520E5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BB7532362800541B00E520E5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BB75323928016C5100E520E5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C4A7A32D1FAB32DB616E6336 /* Pods-AuthorizationForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationForm.debug.xcconfig"; path = "Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm.debug.xcconfig"; sourceTree = "<group>"; };
+		CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D5C286EE4FD6285945EB95 /* Pods_AuthorizationForm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12B063145D7F7E8B5EA7B8AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4A7A32D1FAB32DB616E6336 /* Pods-AuthorizationForm.debug.xcconfig */,
+				0B4BCD254F56121CBD40E49A /* Pods-AuthorizationForm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7CA09E4EE7F3D3E3B7411219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB7531F727FDCE2900E520E5 = {
 			isa = PBXGroup;
 			children = (
 				BB75320227FDCE2900E520E5 /* AuthorizationForm */,
 				BB75320127FDCE2900E520E5 /* Products */,
+				12B063145D7F7E8B5EA7B8AE /* Pods */,
+				7CA09E4EE7F3D3E3B7411219 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,11 +96,13 @@
 		BB75320227FDCE2900E520E5 /* AuthorizationForm */ = {
 			isa = PBXGroup;
 			children = (
+				BB75323828015B0200E520E5 /* Model */,
 				BB75321D27FDD0AB00E520E5 /* Xib */,
 				BB75320327FDCE2900E520E5 /* AppDelegate.swift */,
 				BB75320527FDCE2900E520E5 /* SceneDelegate.swift */,
 				BB75320727FDCE2900E520E5 /* ViewController.swift */,
 				BB75321727FDCF9D00E520E5 /* Controller */,
+				BB7532352800540900E520E5 /* API */,
 				BB753232280038C500E520E5 /* Utils */,
 				BB75322527FDDF5F00E520E5 /* Font */,
 				BB75320927FDCE2900E520E5 /* Main.storyboard */,
@@ -117,6 +147,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		BB7532352800540900E520E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BB7532362800541B00E520E5 /* NetworkService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BB75323828015B0200E520E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB75323928016C5100E520E5 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB75321427FDCE2D00E520E5 /* Build configuration list for PBXNativeTarget "AuthorizationForm" */;
 			buildPhases = (
+				6826E6B4205424D008D37B62 /* [CP] Check Pods Manifest.lock */,
 				BB7531FC27FDCE2900E520E5 /* Sources */,
 				BB7531FD27FDCE2900E520E5 /* Frameworks */,
 				BB7531FE27FDCE2900E520E5 /* Resources */,
+				BC4B678C8E9C9FBB0E4BDD49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +234,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6826E6B4205424D008D37B62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuthorizationForm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC4B678C8E9C9FBB0E4BDD49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB7531FC27FDCE2900E520E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -197,6 +287,8 @@
 				BB75320427FDCE2900E520E5 /* AppDelegate.swift in Sources */,
 				BB75322327FDD9AD00E520E5 /* AuthorizationViewController.swift in Sources */,
 				BB75320627FDCE2900E520E5 /* SceneDelegate.swift in Sources */,
+				BB7532372800541B00E520E5 /* NetworkService.swift in Sources */,
+				BB75323A28016C5100E520E5 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +432,7 @@
 		};
 		BB75321527FDCE2D00E520E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A7A32D1FAB32DB616E6336 /* Pods-AuthorizationForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,6 +462,7 @@
 		};
 		BB75321627FDCE2D00E520E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B4BCD254F56121CBD40E49A /* Pods-AuthorizationForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

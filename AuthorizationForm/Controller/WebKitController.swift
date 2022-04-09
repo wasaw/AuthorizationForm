@@ -13,6 +13,7 @@ class WebKitController: UIViewController {
 //    MARK: - Properties
     
     let webView = WKWebView()
+    let networkService = NetworkService.shared
     
 //    MARK: - Lifecycle
     
@@ -38,6 +39,7 @@ extension WebKitController: WKNavigationDelegate {
         let tokenString = urlString.substring(from: "access_token=", to: "\\&")
         
         if !tokenString.isEmpty {
+            networkService.load(token: tokenString)
             self.dismiss(animated: true, completion: nil)
         }
     }
