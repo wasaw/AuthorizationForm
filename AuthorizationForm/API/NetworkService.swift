@@ -19,13 +19,13 @@ struct NetworkService {
     
 //    MARK: - Helpers
     
-    func load(token: String) {
+    func load(token: String, completion: @escaping((JsonResponse) -> Void)) {
         let requestUrl = startUrl + method + middleUrl + token + endUrl
 
         AF.request(requestUrl).responseDecodable(of: JsonResponse.self) { response in
 
             guard let result = response.value else { return }
-//            print(result)
+                completion(result)
         }
     }
 }

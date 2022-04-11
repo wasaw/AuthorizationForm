@@ -8,5 +8,6 @@ target 'AuthorizationForm' do
   # Pods for AuthorizationForm
 
     pod 'Alamofire'
+    pod 'SDWebImage'
 
 end

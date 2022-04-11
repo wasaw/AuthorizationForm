@@ -35,7 +35,16 @@ class AuthorizationViewController: UIViewController {
     
     @IBAction func authorizationButton(_ sender: Any) {
         let vc = WebKitController()
+        vc.delagete = self
         vc.modalPresentationStyle = .popover
         present(vc, animated: true, completion: nil)
+    }
+}
+
+//  MARK: - Extensins
+
+extension AuthorizationViewController: PhotoGalleryDelegate {
+    func presentPhotoGallery(token: String) {
+        navigationController?.pushViewController(PhotoGalleyViewController(token: token), animated: true)
     }
 }

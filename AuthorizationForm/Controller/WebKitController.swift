@@ -8,12 +8,17 @@
 import UIKit
 import WebKit
 
+protocol PhotoGalleryDelegate: class {
+    func presentPhotoGallery(token: String)
+}
+
 class WebKitController: UIViewController {
     
 //    MARK: - Properties
     
     let webView = WKWebView()
-    let networkService = NetworkService.shared
+    
+    weak var delagete: PhotoGalleryDelegate?
     
 //    MARK: - Lifecycle
     
@@ -21,7 +26,6 @@ class WebKitController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(webView)
-        
         guard let url = URL(string: "https://oauth.vk.com/authorize?client_id=8129851&redirect_uri=oauth.vk.com/blank.htm&scope=12&display=mobile&response_type=token") else { return }
         webView.frame = view.bounds
         webView.navigationDelegate = self
@@ -39,8 +43,9 @@ extension WebKitController: WKNavigationDelegate {
         let tokenString = urlString.substring(from: "access_token=", to: "\\&")
         
         if !tokenString.isEmpty {
-            networkService.load(token: tokenString)
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                self.delagete?.presentPhotoGallery(token: tokenString)
+            }
         }
     }
 }
