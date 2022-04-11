@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectedPhotoViewController" customModule="AuthorizationForm" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="1tu-uU-Fp4" id="PMK-dr-qa5"/>
+                <outlet property="navigation" destination="aJ5-Uz-FeN" id="i0C-pS-egN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzt-I1-NSo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <items>
+                        <navigationItem id="aJ5-Uz-FeN">
+                            <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="DBo-Xr-wmL">
+                                <color key="tintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="backButton:" destination="-1" id="60h-g1-QO2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="eq0-5e-sKD">
+                                <color key="tintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="shareButton:" destination="-1" id="4Xn-rZ-Uak"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tu-uU-Fp4">
+                    <rect key="frame" x="0.0" y="219" width="414" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="375" id="PSQ-dn-KcK"/>
+                        <constraint firstAttribute="width" constant="375" id="svD-g4-Qq7"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1tu-uU-Fp4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hdf-GZ-w1T"/>
+                <constraint firstItem="1tu-uU-Fp4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="219" id="gEM-hc-CDO"/>
+                <constraint firstItem="1tu-uU-Fp4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nMj-pj-u52"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -19,8 +19,7 @@ class PhotoGalleyViewController: UIViewController {
 //    MARK: - Properties
     
     let token: String
-    var imageUrl = [URL]()
-    var imageArray = [UIImage]()
+    var imageMeta = [PhotoMetadata]()
     
 //    MARK: - Lifecycle
     
@@ -52,7 +51,8 @@ class PhotoGalleyViewController: UIViewController {
         NetworkService.shared.load(token: token) { result in
             for item in result.response.items {
                 guard let iUrl = URL(string: item.sizes[2].url) else { continue }
-                self.imageUrl.append(iUrl)
+                let imageMeta = PhotoMetadata(url: iUrl, date: item.date)
+                self.imageMeta.append(imageMeta)
             }
             self.photoCollection.reloadData()
         }
@@ -64,21 +64,22 @@ class PhotoGalleyViewController: UIViewController {
 
 extension PhotoGalleyViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageUrl.count
+        return imageMeta.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
-        if imageUrl.count > indexPath.row {
-            print("DEBUG: count \(imageUrl.count), index: \(indexPath.row)")
-            cell.imageView.sd_setImage(with: imageUrl[indexPath.row])
+        if imageMeta.count > indexPath.row {
+            cell.imageView.sd_setImage(with: imageMeta[indexPath.row].url)
         }
         return cell
     }
 }
 
 extension PhotoGalleyViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(SelectedPhotoViewController(image: imageMeta[indexPath.row], images: imageMeta), animated: true)
+    }
 }
 
 extension PhotoGalleyViewController: UICollectionViewDelegateFlowLayout {
