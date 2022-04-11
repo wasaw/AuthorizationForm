@@ -25,7 +25,7 @@ struct NetworkService {
         AF.request(requestUrl).responseDecodable(of: JsonResponse.self) { response in
 
             guard let result = response.value else { return }
-            print(result)
+//            print(result)
         }
     }
 }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Semibold.ttf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoGalleyViewController" customModule="AuthorizationForm" customModuleProvider="target">
+            <connections>
+                <outlet property="exitButton" destination="yTS-OD-k8B" id="DX6-Ue-YLb"/>
+                <outlet property="photoCollection" destination="lvL-97-h81" id="fL0-KB-bBq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lvL-97-h81">
+                    <rect key="frame" x="0.0" y="100.5" width="414" height="795.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rkf-ws-U4b">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Up Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLa-ey-hsV">
+                    <rect key="frame" x="137" y="62" width="140" height="21.5"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
+                    <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-OD-k8B">
+                    <rect key="frame" x="329" y="62" width="53" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="B4u-z7-0BI"/>
+                        <constraint firstAttribute="width" constant="53" id="zJo-PK-gsm"/>
+                    </constraints>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                    <color key="tintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Выход">
+                        <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="lvL-97-h81" firstAttribute="top" secondItem="FLa-ey-hsV" secondAttribute="bottom" constant="17" id="GuU-fd-KRo"/>
+                <constraint firstItem="lvL-97-h81" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Jkj-Gy-Xp4"/>
+                <constraint firstItem="yTS-OD-k8B" firstAttribute="leading" secondItem="FLa-ey-hsV" secondAttribute="trailing" constant="52" id="PFc-yU-VDI"/>
+                <constraint firstItem="lvL-97-h81" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QiA-ia-LWV"/>
+                <constraint firstItem="FLa-ey-hsV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vhs-xC-g9s"/>
+                <constraint firstItem="FLa-ey-hsV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="amv-2e-ew5"/>
+                <constraint firstItem="yTS-OD-k8B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="rWm-02-j1j"/>
+                <constraint firstItem="lvL-97-h81" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tFP-IT-Ge6"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="44.866071428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

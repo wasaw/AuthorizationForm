@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		79D5C286EE4FD6285945EB95 /* Pods_AuthorizationForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */; };
+		BB50C90728041D6800D2A1EE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50C90528041D6800D2A1EE /* PhotoCell.swift */; };
+		BB50C90828041D6800D2A1EE /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB50C90628041D6800D2A1EE /* PhotoCell.xib */; };
 		BB75320427FDCE2900E520E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320327FDCE2900E520E5 /* AppDelegate.swift */; };
 		BB75320627FDCE2900E520E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320527FDCE2900E520E5 /* SceneDelegate.swift */; };
 		BB75320827FDCE2900E520E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75320727FDCE2900E520E5 /* ViewController.swift */; };
@@ -22,10 +24,15 @@
 		BB753234280038DE00E520E5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB753233280038DE00E520E5 /* Extensions.swift */; };
 		BB7532372800541B00E520E5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7532362800541B00E520E5 /* NetworkService.swift */; };
 		BB75323A28016C5100E520E5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75323928016C5100E520E5 /* Model.swift */; };
+		BB75324B28017BFA00E520E5 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB75324A28017BFA00E520E5 /* SFProDisplay-Semibold.ttf */; };
+		BB753252280362B300E520E5 /* PhotoGalleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB753250280362B300E520E5 /* PhotoGalleyViewController.swift */; };
+		BB753253280362B300E520E5 /* PhotoGalleyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB753251280362B300E520E5 /* PhotoGalleyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B4BCD254F56121CBD40E49A /* Pods-AuthorizationForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationForm.release.xcconfig"; path = "Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm.release.xcconfig"; sourceTree = "<group>"; };
+		BB50C90528041D6800D2A1EE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		BB50C90628041D6800D2A1EE /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		BB75320027FDCE2900E520E5 /* AuthorizationForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthorizationForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB75320327FDCE2900E520E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB75320527FDCE2900E520E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +49,9 @@
 		BB753233280038DE00E520E5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BB7532362800541B00E520E5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BB75323928016C5100E520E5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BB75324A28017BFA00E520E5 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		BB753250280362B300E520E5 /* PhotoGalleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleyViewController.swift; sourceTree = "<group>"; };
+		BB753251280362B300E520E5 /* PhotoGalleyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoGalleyViewController.xib; sourceTree = "<group>"; };
 		C4A7A32D1FAB32DB616E6336 /* Pods-AuthorizationForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationForm.debug.xcconfig"; path = "Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm.debug.xcconfig"; sourceTree = "<group>"; };
 		CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +106,7 @@
 		BB75320227FDCE2900E520E5 /* AuthorizationForm */ = {
 			isa = PBXGroup;
 			children = (
+				BB75323F280173FE00E520E5 /* View */,
 				BB75323828015B0200E520E5 /* Model */,
 				BB75321D27FDD0AB00E520E5 /* Xib */,
 				BB75320327FDCE2900E520E5 /* AppDelegate.swift */,
@@ -118,6 +129,7 @@
 			children = (
 				BB75322127FDD9AD00E520E5 /* AuthorizationViewController.swift */,
 				BB75322C27FEE53200E520E5 /* WebKitController.swift */,
+				BB753250280362B300E520E5 /* PhotoGalleyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				BB75322227FDD9AD00E520E5 /* AuthorizationViewController.xib */,
+				BB753251280362B300E520E5 /* PhotoGalleyViewController.xib */,
+				BB50C90628041D6800D2A1EE /* PhotoCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -135,6 +149,7 @@
 			children = (
 				BB75322827FDE16300E520E5 /* SFPRODISPLAYBOLD.OTF */,
 				BB75322927FE0F0F00E520E5 /* SFPRODISPLAYMEDIUM.OTF */,
+				BB75324A28017BFA00E520E5 /* SFProDisplay-Semibold.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -161,6 +176,14 @@
 				BB75323928016C5100E520E5 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BB75323F280173FE00E520E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB50C90528041D6800D2A1EE /* PhotoCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +248,11 @@
 			files = (
 				BB75322B27FEC75B00E520E5 /* SFPRODISPLAYMEDIUM.OTF in Resources */,
 				BB75322427FDD9AD00E520E5 /* AuthorizationViewController.xib in Resources */,
+				BB75324B28017BFA00E520E5 /* SFProDisplay-Semibold.ttf in Resources */,
 				BB75321027FDCE2D00E520E5 /* LaunchScreen.storyboard in Resources */,
+				BB753253280362B300E520E5 /* PhotoGalleyViewController.xib in Resources */,
 				BB75320D27FDCE2D00E520E5 /* Assets.xcassets in Resources */,
+				BB50C90828041D6800D2A1EE /* PhotoCell.xib in Resources */,
 				BB75322A27FEC74200E520E5 /* SFPRODISPLAYBOLD.OTF in Resources */,
 				BB75320B27FDCE2900E520E5 /* Main.storyboard in Resources */,
 			);
@@ -283,9 +309,11 @@
 			files = (
 				BB75322D27FEE53200E520E5 /* WebKitController.swift in Sources */,
 				BB753234280038DE00E520E5 /* Extensions.swift in Sources */,
+				BB753252280362B300E520E5 /* PhotoGalleyViewController.swift in Sources */,
 				BB75320827FDCE2900E520E5 /* ViewController.swift in Sources */,
 				BB75320427FDCE2900E520E5 /* AppDelegate.swift in Sources */,
 				BB75322327FDD9AD00E520E5 /* AuthorizationViewController.swift in Sources */,
+				BB50C90728041D6800D2A1EE /* PhotoCell.swift in Sources */,
 				BB75320627FDCE2900E520E5 /* SceneDelegate.swift in Sources */,
 				BB7532372800541B00E520E5 /* NetworkService.swift in Sources */,
 				BB75323A28016C5100E520E5 /* Model.swift in Sources */,
