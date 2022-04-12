@@ -17,17 +17,14 @@ class AuthorizationViewController: UIViewController {
     
 //    MARK: - Properties
     
-    let webView = WKWebView()
+    private let webView = WKWebView()
+    
+//    MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(webView)
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         
     }
 

@@ -16,7 +16,7 @@ class WebKitController: UIViewController {
     
 //    MARK: - Properties
     
-    let webView = WKWebView()
+    private let webView = WKWebView()
     
     weak var delagete: PhotoGalleryDelegate?
     

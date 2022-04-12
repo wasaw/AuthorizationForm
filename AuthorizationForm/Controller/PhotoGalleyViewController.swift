@@ -18,8 +18,8 @@ class PhotoGalleyViewController: UIViewController {
     
 //    MARK: - Properties
     
-    let token: String
-    var imageMeta = [PhotoMetadata]()
+    private let token: String
+    private var imageMeta = [PhotoMetadata]()
     
 //    MARK: - Lifecycle
     
@@ -47,7 +47,7 @@ class PhotoGalleyViewController: UIViewController {
     
 //    MARK: - Helpers
     
-    func loadPhoto(_ token: String) {
+    private func loadPhoto(_ token: String) {
         NetworkService.shared.load(token: token) { result in
             for item in result.response.items {
                 guard let iUrl = URL(string: item.sizes[2].url) else { continue }

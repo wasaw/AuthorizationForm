@@ -12,10 +12,10 @@ struct NetworkService {
     
 //    MARK: - Properties
     
-    let startUrl = "https://api.vk.com/method/"
-    let method = "photos.get?owner_id=-128666765&album_id=266276915"
-    let middleUrl = "&access_token="
-    let endUrl = "&v=5.131"
+    private let startUrl = "https://api.vk.com/method/"
+    private let method = "photos.get?owner_id=-128666765&album_id=266276915"
+    private let middleUrl = "&access_token="
+    private let endUrl = "&v=5.131"
     
 //    MARK: - Helpers
     

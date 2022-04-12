@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectedPhotoViewController" customModule="AuthorizationForm" customModuleProvider="target">
             <connections>
+                <outlet property="bottomCollectionView" destination="JUc-Uc-bqG" id="XjQ-lQ-Is2"/>
                 <outlet property="imageView" destination="1tu-uU-Fp4" id="PMK-dr-qa5"/>
                 <outlet property="navigation" destination="aJ5-Uz-FeN" id="i0C-pS-egN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,12 +50,28 @@
                         <constraint firstAttribute="width" constant="375" id="svD-g4-Qq7"/>
                     </constraints>
                 </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-Uc-bqG">
+                    <rect key="frame" x="0.0" y="806" width="414" height="56"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="iRq-zu-Fyz"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="95A-Nh-Vtp">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="JUc-Uc-bqG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="38O-1e-mvp"/>
                 <constraint firstItem="1tu-uU-Fp4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hdf-GZ-w1T"/>
+                <constraint firstAttribute="bottom" secondItem="JUc-Uc-bqG" secondAttribute="bottom" constant="34" id="WIi-e0-Qn8"/>
                 <constraint firstItem="1tu-uU-Fp4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="219" id="gEM-hc-CDO"/>
+                <constraint firstAttribute="trailing" secondItem="JUc-Uc-bqG" secondAttribute="trailing" id="hoy-rO-uQN"/>
                 <constraint firstItem="1tu-uU-Fp4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nMj-pj-u52"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
