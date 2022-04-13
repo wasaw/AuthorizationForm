@@ -57,6 +57,13 @@ class SelectedPhotoViewController: UIViewController {
         let image = imageView.image
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityVC.modalPresentationStyle = .popover
+        activityVC.completionWithItemsHandler = { activityType, saved, _, _ in
+            if saved && activityType?.rawValue == "com.apple.UIKit.activity.SaveToCameraRoll" {
+                let alert = UIAlertController(title: "Сохранение", message: "Фотография успешно сохранена.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Окей", style: .default))
+                self.present(alert, animated: true)
+            }
+        }
         self.present(activityVC, animated: true)
     }
 }
