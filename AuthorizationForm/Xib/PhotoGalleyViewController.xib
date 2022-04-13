@@ -54,6 +54,9 @@
                         <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="exitButton:" destination="-1" eventType="touchUpInside" id="fsP-9f-c6i"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

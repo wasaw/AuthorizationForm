@@ -58,6 +58,12 @@ class PhotoGalleyViewController: UIViewController {
         }
     }
     
+//    MARK: - Actions
+    
+    @IBAction func exitButton(_ sender: Any) {
+        DatabaseService.shared.deleteToken()
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 //  MARK: - Extensions
@@ -78,7 +84,7 @@ extension PhotoGalleyViewController: UICollectionViewDataSource {
 
 extension PhotoGalleyViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(SelectedPhotoViewController(image: imageMeta[indexPath.row], images: imageMeta), animated: true)
+        navigationController?.pushViewController(SelectedPhotoViewController(image: imageMeta[indexPath.row], images: imageMeta), animated: false)
     }
 }
 

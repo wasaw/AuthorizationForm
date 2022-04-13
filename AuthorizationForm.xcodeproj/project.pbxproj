@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		79D5C286EE4FD6285945EB95 /* Pods_AuthorizationForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFB62366EB65FD28460A5D1 /* Pods_AuthorizationForm.framework */; };
+		BB35F9282806C513008F8E0A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35F9272806C513008F8E0A /* DatabaseService.swift */; };
+		BB35F92A2806C579008F8E0A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35F9292806C579008F8E0A /* Token.swift */; };
 		BB3D3CC5280471F800E626CC /* SelectedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3D3CC3280471F800E626CC /* SelectedPhotoViewController.swift */; };
 		BB3D3CC6280471F800E626CC /* SelectedPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3D3CC4280471F800E626CC /* SelectedPhotoViewController.xib */; };
 		BB50C90728041D6800D2A1EE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50C90528041D6800D2A1EE /* PhotoCell.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		0B4BCD254F56121CBD40E49A /* Pods-AuthorizationForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationForm.release.xcconfig"; path = "Target Support Files/Pods-AuthorizationForm/Pods-AuthorizationForm.release.xcconfig"; sourceTree = "<group>"; };
+		BB35F9272806C513008F8E0A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		BB35F9292806C579008F8E0A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		BB3D3CC3280471F800E626CC /* SelectedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPhotoViewController.swift; sourceTree = "<group>"; };
 		BB3D3CC4280471F800E626CC /* SelectedPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedPhotoViewController.xib; sourceTree = "<group>"; };
 		BB50C90528041D6800D2A1EE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7532362800541B00E520E5 /* NetworkService.swift */,
+				BB35F9272806C513008F8E0A /* DatabaseService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BB75323928016C5100E520E5 /* Model.swift */,
+				BB35F9292806C579008F8E0A /* Token.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,10 +326,12 @@
 				BB75320827FDCE2900E520E5 /* ViewController.swift in Sources */,
 				BB75320427FDCE2900E520E5 /* AppDelegate.swift in Sources */,
 				BB75322327FDD9AD00E520E5 /* AuthorizationViewController.swift in Sources */,
+				BB35F9282806C513008F8E0A /* DatabaseService.swift in Sources */,
 				BB50C90728041D6800D2A1EE /* PhotoCell.swift in Sources */,
 				BB75320627FDCE2900E520E5 /* SceneDelegate.swift in Sources */,
 				BB7532372800541B00E520E5 /* NetworkService.swift in Sources */,
 				BB3D3CC5280471F800E626CC /* SelectedPhotoViewController.swift in Sources */,
+				BB35F92A2806C579008F8E0A /* Token.swift in Sources */,
 				BB75323A28016C5100E520E5 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

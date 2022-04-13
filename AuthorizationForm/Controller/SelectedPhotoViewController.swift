@@ -51,7 +51,7 @@ class SelectedPhotoViewController: UIViewController {
     
 //    MARK: - Actions
     @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: false)
     }
     @IBAction func shareButton(_ sender: Any) {
         let image = imageView.image

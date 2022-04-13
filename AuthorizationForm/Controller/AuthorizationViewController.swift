@@ -24,8 +24,20 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkLogIn()
+
         view.addSubview(webView)
         
+    }
+    
+//    MARK: - Helpers
+    
+    func checkLogIn() {
+        let token = DatabaseService.shared.loadToken()
+        
+        if !token.isEmpty {
+            navigationController?.pushViewController(PhotoGalleyViewController(token: token), animated: false)
+        }
     }
 
 //    MARK: - Actions

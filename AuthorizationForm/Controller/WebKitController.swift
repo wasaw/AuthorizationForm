@@ -43,6 +43,9 @@ extension WebKitController: WKNavigationDelegate {
         let tokenString = urlString.substring(from: "access_token=", to: "\\&")
         
         if !tokenString.isEmpty {
+            let token = Token()
+            token.token = tokenString
+            DatabaseService.shared.saveToken(token)
             self.dismiss(animated: true) {
                 self.delagete?.presentPhotoGallery(token: tokenString)
             }
