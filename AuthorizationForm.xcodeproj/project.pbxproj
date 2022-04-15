@@ -139,7 +139,6 @@
 				BB75322C27FEE53200E520E5 /* WebKitController.swift */,
 				BB753250280362B300E520E5 /* PhotoGalleyViewController.swift */,
 				BB3D3CC3280471F800E626CC /* SelectedPhotoViewController.swift */,
-				BB3D3CC4280471F800E626CC /* SelectedPhotoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +148,7 @@
 			children = (
 				BB75322227FDD9AD00E520E5 /* AuthorizationViewController.xib */,
 				BB753251280362B300E520E5 /* PhotoGalleyViewController.xib */,
+				BB3D3CC4280471F800E626CC /* SelectedPhotoViewController.xib */,
 				BB50C90628041D6800D2A1EE /* PhotoCell.xib */,
 			);
 			path = Xib;
@@ -491,6 +491,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +522,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

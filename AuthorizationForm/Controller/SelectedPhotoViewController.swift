@@ -41,7 +41,7 @@ class SelectedPhotoViewController: UIViewController {
         formatter.dateFormat = "dd LLLL yyyy"
         navigation.title = formatter.string(from: date)
         
-        imageView.sd_setImage(with: selectedImage.url)
+        imageView.sd_setImage(with: selectedImage.urlLargeSize)
         
         let nib = UINib(nibName: "PhotoCell", bundle: nil)
         bottomCollectionView.register(nib, forCellWithReuseIdentifier: "PhotoCell")
@@ -54,7 +54,7 @@ class SelectedPhotoViewController: UIViewController {
         navigationController?.popViewController(animated: false)
     }
     @IBAction func shareButton(_ sender: Any) {
-        let image = imageView.image
+        guard let image = imageView.image else { return }
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         activityVC.modalPresentationStyle = .popover
         activityVC.completionWithItemsHandler = { activityType, saved, _, _ in
@@ -73,7 +73,7 @@ class SelectedPhotoViewController: UIViewController {
 extension SelectedPhotoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if imageArray.count > indexPath.row {
-            imageView.sd_setImage(with: imageArray[indexPath.row].url)
+            imageView.sd_setImage(with: imageArray[indexPath.row].urlLargeSize)
         }
     }
 }

@@ -20,6 +20,7 @@ class PhotoGalleyViewController: UIViewController {
     
     private let token: String
     private var imageMeta = [PhotoMetadata]()
+    let reuseIdentifire = "PhotoCell"
     
 //    MARK: - Lifecycle
     
@@ -39,8 +40,8 @@ class PhotoGalleyViewController: UIViewController {
 
         navigationController?.isNavigationBarHidden = true
 
-        let nib = UINib(nibName: "PhotoCell", bundle: nil)
-        photoCollection.register(nib, forCellWithReuseIdentifier: "PhotoCell")
+        let nib = UINib(nibName: reuseIdentifire, bundle: nil)
+        photoCollection.register(nib, forCellWithReuseIdentifier: reuseIdentifire)
         photoCollection.dataSource = self
         photoCollection.delegate = self
     }
@@ -51,7 +52,8 @@ class PhotoGalleyViewController: UIViewController {
         NetworkService.shared.load(token: token) { result in
             for item in result.response.items {
                 guard let iUrl = URL(string: item.sizes[2].url) else { continue }
-                let imageMeta = PhotoMetadata(url: iUrl, date: item.date)
+                guard let largeUrl = URL(string: item.sizes[4].url) else { continue }
+                let imageMeta = PhotoMetadata(url: iUrl, date: item.date, urlLargeSize: largeUrl)
                 self.imageMeta.append(imageMeta)
             }
             self.photoCollection.reloadData()
@@ -74,7 +76,7 @@ extension PhotoGalleyViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
+        guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
         if imageMeta.count > indexPath.row {
             cell.imageView.sd_setImage(with: imageMeta[indexPath.row].url)
         }

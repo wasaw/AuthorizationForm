@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-protocol PhotoGalleryDelegate: class {
+protocol PhotoGalleryDelegate: AnyObject {
     func presentPhotoGallery(token: String)
 }
 

@@ -29,4 +29,5 @@ struct Photo: Decodable {
 struct PhotoMetadata {
     let url: URL
     let date: TimeInterval
+    let urlLargeSize: URL
 }
