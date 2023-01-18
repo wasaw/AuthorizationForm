@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 
-class PhotoGalleyViewController: UIViewController {
+final class PhotoGalleyViewController: UIViewController {
 
 //    MARK: - Outlet
     
@@ -20,7 +20,6 @@ class PhotoGalleyViewController: UIViewController {
     
     private let token: String
     private var imageMeta = [PhotoMetadata]()
-    let reuseIdentifire = "PhotoCell"
     
 //    MARK: - Lifecycle
     
@@ -40,10 +39,13 @@ class PhotoGalleyViewController: UIViewController {
 
         navigationController?.isNavigationBarHidden = true
 
-        let nib = UINib(nibName: reuseIdentifire, bundle: nil)
-        photoCollection.register(nib, forCellWithReuseIdentifier: reuseIdentifire)
+        let nib = UINib(nibName: PhotoCell.reuseIdentifire, bundle: nil)
+        photoCollection.register(nib, forCellWithReuseIdentifier: PhotoCell.reuseIdentifire)
         photoCollection.dataSource = self
         photoCollection.delegate = self
+        photoCollection.backgroundColor = .white
+        
+        view.backgroundColor = .white
     }
     
 //    MARK: - Helpers
@@ -63,7 +65,7 @@ class PhotoGalleyViewController: UIViewController {
 //    MARK: - Actions
     
     @IBAction func exitButton(_ sender: Any) {
-        DatabaseService.shared.deleteToken()
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.token)
         navigationController?.popToRootViewController(animated: true)
     }
 }
@@ -76,7 +78,7 @@ extension PhotoGalleyViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
+        guard let cell = photoCollection.dequeueReusableCell(withReuseIdentifier: PhotoCell.reuseIdentifire, for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
         if imageMeta.count > indexPath.row {
             cell.imageView.sd_setImage(with: imageMeta[indexPath.row].url)
         }

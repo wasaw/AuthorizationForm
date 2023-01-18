@@ -31,3 +31,7 @@ struct PhotoMetadata {
     let date: TimeInterval
     let urlLargeSize: URL
 }
+
+enum UserDefaultsKeys {
+    static let token = "token"
+}

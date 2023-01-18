@@ -9,6 +9,5 @@ target 'AuthorizationForm' do
 
     pod 'Alamofire'
     pod 'SDWebImage'
-    pod 'RealmSwift'
 
 end

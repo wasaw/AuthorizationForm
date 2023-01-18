@@ -8,14 +8,15 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
+    static let reuseIdentifire = "PhotoCell"
 
-//    MAKR: - Outlet
+//    MARK: - Outlet
     
     @IBOutlet weak var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }
