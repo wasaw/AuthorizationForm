@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class AuthorizationViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
     
 //  MARK: - Outlets
     
@@ -32,8 +32,8 @@ class AuthorizationViewController: UIViewController {
     
 //    MARK: - Helpers
     
-    func checkLogIn() {
-        let token = DatabaseService.shared.loadToken()
+    private func checkLogIn() {
+        let token = UserDefaults.standard.object(forKey: UserDefaultsKeys.token) as? String ?? ""
         
         if !token.isEmpty {
             navigationController?.pushViewController(PhotoGalleyViewController(token: token), animated: false)

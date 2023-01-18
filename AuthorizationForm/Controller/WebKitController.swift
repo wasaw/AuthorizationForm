@@ -12,7 +12,7 @@ protocol PhotoGalleryDelegate: AnyObject {
     func presentPhotoGallery(token: String)
 }
 
-class WebKitController: UIViewController {
+final class WebKitController: UIViewController {
     
 //    MARK: - Properties
     
@@ -40,14 +40,12 @@ extension WebKitController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
         let urlString = (String(describing: webView.url))
-        let tokenString = urlString.substring(from: "access_token=", to: "\\&")
+        let token = urlString.substring(from: "access_token=", to: "\\&")
         
-        if !tokenString.isEmpty {
-            let token = Token()
-            token.token = tokenString
-            DatabaseService.shared.saveToken(token)
+        if !token.isEmpty {
+            UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token)
             self.dismiss(animated: true) {
-                self.delagete?.presentPhotoGallery(token: tokenString)
+                self.delagete?.presentPhotoGallery(token: token)
             }
         }
     }

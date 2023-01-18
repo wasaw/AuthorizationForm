@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class SelectedPhotoViewController: UIViewController {
+final class SelectedPhotoViewController: UIViewController {
     
 //    MARK: - Outlets
 
@@ -47,6 +47,8 @@ class SelectedPhotoViewController: UIViewController {
         bottomCollectionView.register(nib, forCellWithReuseIdentifier: "PhotoCell")
         bottomCollectionView.delegate = self
         bottomCollectionView.dataSource = self
+        
+        view.backgroundColor = .white
     }
     
 //    MARK: - Actions
