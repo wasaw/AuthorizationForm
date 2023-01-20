@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoGalleyViewController" customModule="AuthorizationForm" customModuleProvider="target">
             <connections>
+                <outlet property="downloadButton" destination="NpV-gy-9Zz" id="hc4-AQ-8W1"/>
                 <outlet property="exitButton" destination="yTS-OD-k8B" id="DX6-Ue-YLb"/>
                 <outlet property="photoCollection" destination="lvL-97-h81" id="fL0-KB-bBq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lvL-97-h81">
-                    <rect key="frame" x="0.0" y="100.5" width="414" height="795.5"/>
+                    <rect key="frame" x="0.0" y="56" width="414" height="840"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rkf-ws-U4b">
                         <size key="itemSize" width="128" height="128"/>
@@ -36,13 +38,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Up Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLa-ey-hsV">
-                    <rect key="frame" x="137" y="62" width="140" height="21.5"/>
+                    <rect key="frame" x="135" y="18" width="144" height="21"/>
                     <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
                     <color key="textColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-OD-k8B">
-                    <rect key="frame" x="329" y="62" width="53" height="21"/>
+                    <rect key="frame" x="331" y="18" width="53" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="B4u-z7-0BI"/>
                         <constraint firstAttribute="width" constant="53" id="zJo-PK-gsm"/>
@@ -58,10 +60,23 @@
                         <action selector="exitButton:" destination="-1" eventType="touchUpInside" id="fsP-9f-c6i"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpV-gy-9Zz">
+                    <rect key="frame" x="1" y="10.666666666666664" width="94" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="XBs-wq-NLR"/>
+                        <constraint firstAttribute="width" constant="94" id="YeQ-vA-HSr"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Скачать"/>
+                    <connections>
+                        <action selector="download:" destination="-1" eventType="touchUpInside" id="I77-RN-Xas"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="NpV-gy-9Zz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="1" id="B3b-cc-L7i"/>
                 <constraint firstItem="lvL-97-h81" firstAttribute="top" secondItem="FLa-ey-hsV" secondAttribute="bottom" constant="17" id="GuU-fd-KRo"/>
                 <constraint firstItem="lvL-97-h81" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Jkj-Gy-Xp4"/>
                 <constraint firstItem="yTS-OD-k8B" firstAttribute="leading" secondItem="FLa-ey-hsV" secondAttribute="trailing" constant="52" id="PFc-yU-VDI"/>
@@ -70,6 +85,7 @@
                 <constraint firstItem="FLa-ey-hsV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="amv-2e-ew5"/>
                 <constraint firstItem="yTS-OD-k8B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="rWm-02-j1j"/>
                 <constraint firstItem="lvL-97-h81" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tFP-IT-Ge6"/>
+                <constraint firstItem="lvL-97-h81" firstAttribute="top" secondItem="NpV-gy-9Zz" secondAttribute="bottom" constant="10.5" id="z1M-IJ-kBe"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="44.866071428571423"/>
         </view>
