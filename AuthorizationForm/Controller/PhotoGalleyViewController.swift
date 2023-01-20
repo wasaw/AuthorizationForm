@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Photos
 
 
 final class PhotoGalleyViewController: UIViewController {
@@ -15,11 +16,15 @@ final class PhotoGalleyViewController: UIViewController {
     
     @IBOutlet weak var photoCollection: UICollectionView!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var downloadButton: UIButton!
     
-//    MARK: - Properties
+    //    MARK: - Properties
     
     private let token: String
     private var imageMeta = [PhotoMetadata]()
+    private var largeImageArray: [UIImage] = []
+    
+    var assetCollection: PHAssetCollection!
     
 //    MARK: - Lifecycle
     
@@ -54,15 +59,84 @@ final class PhotoGalleyViewController: UIViewController {
         NetworkService.shared.load(token: token) { result in
             for item in result.response.items {
                 guard let iUrl = URL(string: item.sizes[2].url) else { continue }
-                guard let largeUrl = URL(string: item.sizes[4].url) else { continue }
+                guard let largeUrl = URL(string: item.sizes[5].url) else { continue }
                 let imageMeta = PhotoMetadata(url: iUrl, date: item.date, urlLargeSize: largeUrl)
                 self.imageMeta.append(imageMeta)
             }
             self.photoCollection.reloadData()
+            self.imageArray()
         }
     }
     
+    private func imageArray() {
+        DispatchQueue.global().async {
+            for i in 0..<self.imageMeta.count {
+                if let data = try? Data(contentsOf: self.imageMeta[i].urlLargeSize) {
+                    if let image = UIImage(data: data) {
+                        self.largeImageArray.append(image)
+                        
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                self.showAlertWith(title: "Загрузка", message: "Загрузка завершена")
+            }
+        }
+    }
+    
+    private func fetchAssetCollectionForAlbum() -> PHAssetCollection? {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.predicate = NSPredicate(format: "title = %@", "NewAlbum")
+        let collection = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
+
+        if let _ : AnyObject = collection.firstObject {
+            return collection.firstObject
+        }
+        return nil
+    }
+    
+    private func save(_ image: UIImage, completion: @escaping ((Bool, Error?) -> ())) {
+        PHPhotoLibrary.shared().performChanges({
+            let assetChangeRequest = PHAssetChangeRequest.creationRequestForAsset(from: image)
+            let assetPlaceHolder = assetChangeRequest.placeholderForCreatedAsset
+            let albumChangeRequest = PHAssetCollectionChangeRequest(for: self.assetCollection)
+            let enumeration: NSArray = [assetPlaceHolder!]
+            albumChangeRequest!.addAssets(enumeration)
+
+        }, completionHandler: { result, error in
+            completion(result, error)
+        })
+    }
+    
+    private func showAlertWith(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
 //    MARK: - Actions
+    
+    @IBAction func download(_ sender: Any) {
+        PHPhotoLibrary.requestAuthorization { status in
+        }
+        
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: "NewAlbum")
+        }) { success, error in
+            if !success { print("Error creating album: \(String(describing: error)).")}
+        }
+        
+        if let assetCollection = fetchAssetCollectionForAlbum() {
+            self.assetCollection = assetCollection
+        }
+        
+        for i in 0..<largeImageArray.count {
+            save(largeImageArray[i]) { result, error in
+            }
+        }
+        
+        showAlertWith(title: "Сохранение", message: "Сохранение фотографий завершено")
+    }
     
     @IBAction func exitButton(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.token)

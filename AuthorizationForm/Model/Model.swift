@@ -23,6 +23,7 @@ struct PhotoInformations: Decodable {
 }
 
 struct Photo: Decodable {
+    let type: String
     let url: String
 }
 
